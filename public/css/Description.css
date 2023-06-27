@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Coda&family=IBM+Plex+Mono:wght@500&family=Inter&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+  
+#descriptionContainer{
+    height: auto;
+    width: 100%;
+    background: #000;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    background: rgb(28, 28, 28);
+}
+#descriptionContainer #box{
+    height: 620px;
+    width: 1000px;
+    margin-top: 100px;
+    display: flex;
+    margin-bottom: 100px;
+    flex-direction: column;
+}
+#descriptionContainer #box #firstInfo{
+    height: 75%;
+    width: 100%;
+    display: flex;
+}
+#descriptionContainer #box #firstInfo:nth-child(2){
+    height: 25%;
+    width: 100%;
+}
+#descriptionContainer #box #firstInfo section:nth-child(1){
+    height: 100%;
+    width: 400px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* background: rgb(149, 38, 38); */
+
+}
+#information{
+    height: 100%;
+    width: 65%;
+    /* background: yellow; */
+}
+#information h1{
+    margin-top: 60px;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #fff;
+}
+#information :nth-child(2):first-of-type{
+    height: 80px;
+    width: 100%;
+}
+.metier{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+.metier-span{
+    background: #3D3D3D;
+    font-size: 1rem;
+    padding: 2px 10px;
+    border-radius: 3px;
+    color: #fff;
+}
+.employe-span{
+    margin-left: 30px;
+    font-size: 1rem;
+    font-weight: 200;
+    color: #fff;
+}
+.designer{
+    margin-right: 28px;
+    color: #fff;
+}
+#information article:nth-child(3){
+    height: 160px;
+    width: 90%;
+}
+#information article:nth-child(3) p{
+    margin-top: 20px;
+    font-weight: 400;
+    color: #fff;
+}
+#information article:nth-child(4){
+    height: 60px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.btn-visit:nth-child(2){
+    font-size: 1.5rem;
+    margin-left: 50px;
+    padding: 5px 15px;
+    background: #000;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+}
+.btn-visit:nth-child(1){
+    font-size: 1.5rem;
+    margin-left: 0px;
+    padding: 5px 15px;
+    background: #000;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+}
+#secondInfo{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin-top: 50px;
+}
+#leavePage{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 30px;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+}
+#imagePresentation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+}
+#imagePresentation img{
+    width: 60%;
+    height: auto;
+}
+@media screen and ( max-width : 830px ) {
+    #descriptionContainer #box #firstInfo section:nth-child(1){
+        display: none;
+    }
+    #information{
+        width: 90%;
+    }
+    #descriptionContainer #box #firstInfo{
+        justify-content: center;
+    }
+    #imagePresentation img{
+        width: 70%;
+        height: auto;
+    }
+    #descriptionContainer{
+        background: #000;
+    }
+    #information h1{
+        font-size: 3rem;
+        margin-bottom: 50px;
+    }
+    #descriptionContainer #box{
+        width: 100%;
+        margin-top: 50px;
+    }
+    #secondInfo{
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        margin-top: 50px;
+        flex-wrap: wrap;
+        height: auto;
+    }
+    #imagePresentation img{
+        width: 70%;
+        height: auto;
+        /* margin: 100px 0px; */
+    }
+}
+@media screen and ( max-width : 500px ) {
+
+    #imagePresentation img{
+        width: 100%;
+        height: auto;
+        margin: 100px 0px;
+    }
+    .btn-visit:nth-child(2){
+        font-size: 0.9rem;
+        padding: 5px 15px;
+    }
+    .btn-visit:nth-child(1){
+        font-size: 0.9rem;
+        padding: 5px 15px;
+    }
+    #information article:nth-child(3) p{
+        font-size: 0.9rem;
+    }
+    .metier-span{
+        font-size: 1rem;
+    }
+    .employe-span{
+        font-size: 0.8rem;
+        margin-left: 5px;
+    }
+    #information article:nth-child(4){
+        width: 270px;
+    }
+}

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Mandali&display=swap');
+
+#containerSkills{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    
+}
+#containerSkills section{
+    height: 550px;
+    width: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+#sectionBorder{
+    height: 550px;
+    width: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    border-left: 1px solid #fff;
+}
+#containerSkills section h1{
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+    font-weight: 200;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+#containerSkills section article{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+#article2{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+@media screen and (max-width : 720px ) {
+    #containerSkills{    
+
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+
+        flex-wrap: wrap;
+        height: auto;
+        width: auto;
+    }
+    #sectionBorder{
+        border-left: 0px solid #fff;
+    }
+}
+@media screen and (max-width : 500px ) {
+    #langage{
+        margin: 0px 20px;
+    }
+    #containerSkills section{
+        height: 450px;
+        width: 400px;
+        border: 1px solid #000;
+    
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        border: 1px solid #000;
+    }
+    #sectionBorder{
+        height: 450px;
+        width: 400px;
+    
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        border-left: 1px solid #fff;
+    }
+}

@@ -1,0 +1,99 @@
+#langage{
+    height: 100px;
+    width: 100px;
+    margin: 20px 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+#langage div figure{
+    height: 0px;
+    width: 100px;
+    margin-top: 20px;
+
+}
+#langage h6{
+    margin-bottom: 10px;
+    font-weight: 200;
+    color: #fff;
+    font-size: 0.7rem;
+}
+#langage figure img{
+    height: 50px;
+    width: 50px;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+/* langage description */
+#langageDescriptionPage{
+    height: 100px;
+    width: 100px;
+    margin: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border: 1px solid #fff;
+    cursor: pointer;
+    background: #000;
+    scale: 0.8;
+}
+#langageDescriptionPage div figure{
+    height: 0px;
+    width: 100px;
+    margin-top: 20;
+
+}
+#langageDescriptionPage h6{
+    margin-bottom: 10px;
+    font-weight: 200;
+    color: #fff;
+    font-size: 0.7rem;
+}
+#langageDescriptionPage figure img{
+    height: 50px;
+    width: 50px;
+}
+@media screen and (max-width : 930px ) {
+    #langage{
+        margin: 20px 40px;
+    }
+}
+@media screen and (max-width : 800px ) {
+    #langageDescriptionPage{
+        margin: 10px 10px;
+        scale: 0.65;
+    }
+}
+@media screen and (max-width : 730px ) {
+    #langage{
+        margin: 20px 40px;
+    }
+}
+@media screen and (max-width : 500px ) {
+    #langage{
+        height: 70px;
+        width: 70px;
+        margin: 20px 40px;
+
+    }
+    #langage figure img{
+        height: 30px;
+        width: 30px;
+    }
+    #langage h6{
+        font-size: 0.5rem;
+    }
+    #langageDescriptionPage{
+        margin: 0px 0px;
+        scale: 0.5;
+    }
+    #langageDescriptionPage h6{
+        margin-bottom: 10px;
+        font-weight: 200;
+        color: #fff;
+        font-size: 0.9rem;
+    }
+}
