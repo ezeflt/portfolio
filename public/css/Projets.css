@@ -12,27 +12,64 @@
 #projetContainer section{
     height: auto;
     width: 850px;
+    position: relative;
 }
 #projetContainer section article{
     height: 550px;
     width: 100%;
     margin-top: 200px;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
+    display: flex;
 }
 #projetContainer section article:nth-child(even){
     height: 550px;
     width: 100%;
     margin-top: 200px;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
+    flex-direction: row-reverse;
+}
+.imgVitrine{
+    height: 300px;
+    width:  auto;
+    scale: 1.5;
+}
+.iphoneVideo{
+    height: auto;
+    width:  300px
+}
+.laptopVideo{
+    height: auto;
+    width:  300px;
+    z-index: -1;
+    scale: 2.5;
+}
+#videoRepresentation{
+    height: auto;
+    /* background: #c62e2e; */
+    display: flex;
+    align-items: center;
+    top: 0;
+    right: 0;
+    scale: 1;
 }
 @media screen and ( max-width : 930px) {
     #projetContainer section{
     height: auto;
     width: 100%;
-
+}
+@media screen and ( max-width : 870px) {
+    .imgVitrine{
+        display: none;
+    }
+    .videoVitrine{
+        display: none;
+    }
+    #videoRepresentation{
+        display: none;
+    }
 }
 }
 @media screen and ( max-width : 500px) {

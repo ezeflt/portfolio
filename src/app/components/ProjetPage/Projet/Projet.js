@@ -6,27 +6,35 @@ import { newData } from "@/redux/features/passData";
 import { useDispatch, useSelector, batch } from "react-redux";
 import { Link } from 'react-router-dom';
 
-const Projet = ({
-  index,
-  img,
-  title,
-  description,
-  number,
-  descriptionPage,
-}) => {
-
+const Projet = ({ index, img, title, description, number, descriptionPage, skills, longDescription, imgPresentation, button, developers, designer }) => {
 
   const router = useRouter();
+  const data = useSelector((state)=> state.passData.value);
+
+  const dispatch = useDispatch();
 
   const handleClick = () => {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      // Utilisez localStorage ici
-      localStorage.setItem('id', index);
-      router.push('/description');
-    } else {
-      // Gérez le cas où localStorage n'est pas disponible
-      console.log('localStorage is not available');
-    }
+
+    dispatch(newData({
+      index : index,
+      img : img,
+      title : title,
+      description : description,
+      number : number,
+      descriptionPage : descriptionPage,
+      longDescription : longDescription,
+      skills : skills,
+      imgPresentation : imgPresentation,
+      button : button,
+      developers : developers,
+      designer : designer,
+    }));
+    document.querySelector('#descriptionContainer').style.display = 'flex';
+
+
+    console.log(data);
+    console.log(index, img, title, description, number, descriptionPage);
+
   };
 
 

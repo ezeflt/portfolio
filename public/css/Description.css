@@ -5,7 +5,7 @@
     margin: 0;
     font-family: 'Inter', sans-serif;
 }
-  
+
 #descriptionContainer{
     height: auto;
     width: 100%;
@@ -16,10 +16,20 @@
     justify-content: center;
 
     flex-wrap: wrap;
-    background: rgb(28, 28, 28);
+    position: fixed;
+    display: none;
+}
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    overflow: scroll; 
+    flex-wrap: wrap;
+    max-height: 100vh;
 }
 #descriptionContainer #box{
-    height: 620px;
+    height: auto;
     width: 1000px;
     margin-top: 100px;
     display: flex;
@@ -30,6 +40,9 @@
     height: 75%;
     width: 100%;
     display: flex;
+}
+#cardContainer{
+    pointer-events: none;
 }
 #descriptionContainer #box #firstInfo:nth-child(2){
     height: 25%;
@@ -58,15 +71,17 @@
     color: #fff;
 }
 #information :nth-child(2):first-of-type{
-    height: 80px;
+    height: auto;
     width: 100%;
+    margin-top: 10px;
 }
 .metier{
-    height: 40px;
+    height: auto;
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: start;
     color: #fff;
+    flex-direction: column;
 }
 .metier-span{
     background: #3D3D3D;
@@ -76,7 +91,7 @@
     color: #fff;
 }
 .employe-span{
-    margin-left: 30px;
+    margin-right: 30px;
     font-size: 1rem;
     font-weight: 200;
     color: #fff;
@@ -84,10 +99,12 @@
 .designer{
     margin-right: 28px;
     color: #fff;
+    margin-top: 10px;
 }
 #information article:nth-child(3){
-    height: 160px;
+    height: auto;
     width: 90%;
+    margin-bottom: 20px;
 }
 #information article:nth-child(3) p{
     margin-top: 20px;

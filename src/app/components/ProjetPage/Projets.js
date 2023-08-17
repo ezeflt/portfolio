@@ -15,7 +15,16 @@ const Projets = () => {
           img={data.img}
           title={data.title}
           description={data.description}
+          longDescription={data.description2}
+          skills={data.skills}
+          designer={data.designer}
+          developers={data.developers}
+          button={data.button}
+          imgPresentation={data.imgPresentation}
         />
+        <figure id="videoRepresentation">
+          {data.Vitrine.img ? <img className="imgVitrine" src={data.Vitrine.src} /> : <video muted loop className={data.Vitrine.class} autoPlay src={data.Vitrine.src} /> }
+        </figure>
       </article>
     );
   });
@@ -23,7 +32,9 @@ const Projets = () => {
   return (
     <>
       <div id="projetContainer">
-        <section>{projets}</section>
+        <section>
+          {projets}
+        </section>
       </div>
     </>
   );

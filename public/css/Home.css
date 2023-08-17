@@ -96,6 +96,38 @@ h1{
     color: #482323;
     font-size: 2rem;
     cursor: pointer;
+    display: none;
+}
+#aboutMe{
+    height: 100%;
+    width: 100%;
+    background: #000;
+    z-index: 300;
+    position: fixed;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    overflow: scroll;
+    display: none;
+}
+#aboutMe h2{
+    text-transform: uppercase;
+    margin-top: 10%;
+}
+#aboutMe p {
+    width: 60%;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#xMark{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 30px;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
 }
 @media screen and (max-width : 1000px) {
     .menu{
@@ -108,7 +140,30 @@ h1{
         display: none;
     }
 }
+@media screen and (max-width : 600px) {
+    #boxBtn button{
+        margin-right: 50px;
+        font-size: 1rem;
+        padding: 6px 8px;
+    }
+    .main article div{
+        width: 526px;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+}
 @media screen and (max-width : 500px) {
+    #xMark{
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 20px;
+        height: 30px;
+        width: 30px;
+    }
     article div h1{
         font-size: 2rem;
     }
@@ -117,6 +172,21 @@ h1{
     }
     article div{
         width: 100%;
+    }
+    #aboutMe h2{
+        text-transform: uppercase;
+        margin-top: 20%;
+    }
+    #boxBtn{
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: baseline;
+    }
+    #aboutMe p {
+        width: 80%;
     }
 }
 @media screen and (max-width : 440px) {
@@ -132,5 +202,17 @@ h1{
         justify-content: space-between;
         flex-direction: column;
         align-items: baseline;
+    }
+}
+@media screen and (max-width : 360px) {
+    #boxBtn button{
+        margin-right: 50px;
+        margin-top: 10px;
+        font-size: 0.9rem;
+        padding: 6px 3px;
+    }
+    #boxBtn button:nth-last-child(1){
+        padding: 6px 3px;
+        border-radius: 1.5px;
     }
 }

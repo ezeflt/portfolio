@@ -7,21 +7,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/navigation";
 import { dataProjet } from "../ProjetPage/dataProjet";
+import { useSelector } from "react-redux";
 
 const Description = () => {
 
   const [index, setIndex] = useState(0);
-  useEffect(() => {
-    const storedValue = localStorage.getItem('id');
-    console.log('INDEX',storedValue);
-    setIndex(storedValue-1);
-    // Faites quelque chose avec la valeur récupérée de localStorage
-  }, []);
 
-  const router = useRouter();
+  const data = useSelector((state)=> state.passData.value);
 
   const handleClick = () => {
-    router.push("/#projetContainer");
+    document.querySelector('#descriptionContainer').style.display = 'none';
   };
 
   const dataTest = {
@@ -38,69 +33,69 @@ const Description = () => {
       { titleLangage: "BOOTSTRAP", img: "/img/skillsImg/bootstrap.png" },
     ],
   };
+  let skills;
+  let developers;
+  let designer;
+  let button;
+  let image;
 
-  const skills = dataTest.skills.map((data, i) => {
-    return (
-      <Langage
-        descriptionPage={true}
-        img={data.img}
-        titleLangage={data.titleLangage}
-        key={i}
-      />
-    );
-  });
+  if(data.skills){
+    skills = data.skills.map((data, i) => {return  <Langage descriptionPage={true} img={data.img} titleLangage={data.titleLangage} key={i}/>});
+    developers = data.developers.map(developer => { return <span className="employe-span">@{developer}</span>});
+    designer = data.designer.map(designer => { return <span className="employe-span">@{designer}</span>});
+    button = data.button.map(button => { return <a target="_blank" href={button.link} className="btn-visit">{button.title}</a>});
+    image = data.imgPresentation.map(image => { return <img src={image} />})
+  }
 
   return (
     <div id="descriptionContainer">
-      <a href="#containerSkills">
-        <FontAwesomeIcon
-          onClick={() => handleClick()}
-          id="leavePage"
-          icon={faXmark}
-        />
-      </a>
-      <article id="box">
-        <div id="firstInfo">
-          <section>
-            <Projet
-              number={dataProjet[index].number}
-              img={dataProjet[index].img}
-              title={dataProjet[index].title}
-              description={dataProjet[index].description}
-              descriptionPage={true}
-            />
-          </section>
-          <section id="information">
-            <h1>{dataProjet[index].title}</h1>
-            <article>
-              <div className="metier">
-                <span className="metier-span">Développeur :</span>
-                <span className="employe-span">@Développeur</span>
-                <span className="employe-span">@Développeur</span>
-              </div>
-              <div className="metier">
-                <span className="metier-span designer">Designer :</span>
-                <span className="employe-span">@Designer</span>
-                <span className="employe-span">@Designer</span>
-              </div>
-            </article>
-            <article>
-              <p>
-                {dataProjet[index].description2}
-              </p>
-            </article>
-            <article>
-              <button className="btn-visit">SITE WEB</button>
-              <button className="btn-visit">GITHUB</button>
-            </article>
-          </section>
-        </div>
-        <div id="secondInfo">{skills}</div>
-      </article>
-      <article id="imagePresentation">
-        <img src="/img/imgProjet/twitterMac.png" />
-        <img src="/img/imgProjet/twitterPhone.png" />
-      </article>
+      <div id="container">
+        <a>
+          <FontAwesomeIcon
+            onClick={() => handleClick()}
+            id="leavePage"
+            icon={faXmark}
+          />
+        </a>
+        <article id="box">
+          <div id="firstInfo">
+            <section id="cardContainer">
+              <Projet
+                number={data.number}
+                img={data.img}
+                title={data.title}
+                description={data.description}
+                descriptionPage={true}
+              />
+            </section>
+            <section id="information">
+              <h1>{data.title}</h1>
+              <article>
+                <div className="metier">
+                  <span className="metier-span">Développeur :</span>
+                  <div>{developers}</div>
+                </div>
+                <div className="metier">
+                  <span className="metier-span designer">Designer :</span>
+                  <div>{designer}</div>
+                </div>
+              </article>
+              <article>
+                <p>
+                  {data.longDescription}
+                </p>
+              </article>
+              <article>
+                {button}
+              </article>
+            </section>
+          </div>
+          <div id="secondInfo">{skills}</div>
+        </article>
+        <article id="imagePresentation">
+          {image}
+        </article>
+      </div>
     </div>
   );
 };
