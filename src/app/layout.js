@@ -3,9 +3,6 @@ import { useEffect } from 'react'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { ReduxProvider } from '@/redux/provider';
-import { Provider } from 'react-redux';
-import store from '@/redux/store';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -35,7 +32,7 @@ export default function RootLayout({ children }) {
         <meta name='language' content='fr'></meta>
         <link rel="vercel" sizes="180x180" href="vercel.svg" />
       </head>
-      <ReduxProvider store={store}>
+      <ReduxProvider store={children}>
         <body className={inter.className}>
             {children}
         </body>
