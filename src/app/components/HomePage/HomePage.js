@@ -51,9 +51,9 @@ const HomePage = () => {
       <Navbar />
       {/* réseaux sociaux */}
       <div id="boxReseaux">
-        <img src="/img/accueilImg/linkedin.png" />
-        <img src="/img/accueilImg/github.png" />
-        <img src="/img/accueilImg/instagram.png" />
+      <a target='_blank' href="https://www.linkedin.com/in/ezechiel-felten-475693248/"><img src="/img/accueilImg/linkedin.png" /></a>
+        <a target='_blank' href="https://github.com/ezeflt"><img src="/img/accueilImg/github.png" /></a>
+        <a target='_blank' href="https://www.instagram.com/eze_flt/"><img src="/img/accueilImg/instagram.png" /></a>
       </div>
       {/* présentation */}
       <article>
@@ -65,7 +65,7 @@ const HomePage = () => {
           </div>
           <div id="boxBtn">
             <button onClick={()=>{document.querySelector('#aboutMe').style.display = 'flex'}}>ME DÉCOUVRIR</button>
-            <button>LIRE MON CV</button>
+            <a target="_blank" href="/img/imgCV/Felten ezechiel CV (alternance).pdf" download><button>LIRE MON CV</button></a>
           </div>
         </div>
       </article>
