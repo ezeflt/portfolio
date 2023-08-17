@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import passData from "./features/passData";
+import passDataReducer from "./features/passData";
 
 const store = configureStore({
   reducer: {
-    passData
+    passData: passDataReducer
   }
 });
 

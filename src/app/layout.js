@@ -35,9 +35,11 @@ export default function RootLayout({ children }) {
         <meta name='language' content='fr'></meta>
         <link rel="vercel" sizes="180x180" href="vercel.svg" />
       </head>
-      <body className={inter.className}>
-          <Provider store={store}>{children}</Provider>
-      </body>
+      <ReduxProvider store={store}>
+        <body className={inter.className}>
+            {children}
+        </body>
+      </ReduxProvider>
     </html>
   )
 }
