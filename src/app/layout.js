@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import store from '@/redux/store';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
@@ -35,7 +36,7 @@ export default function RootLayout({ children }) {
         <link rel="vercel" sizes="180x180" href="vercel.svg" />
       </head>
       <body className={inter.className}>
-          <ReduxProvider store={store}>{children}</ReduxProvider>
+          <Provider store={store}>{children}</Provider>
       </body>
     </html>
   )

@@ -1,15 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "../../../../../public/css/Projet.css";
-import { useRouter } from "next/navigation";
 import { newData } from "@/redux/features/passData";
 import { useDispatch, useSelector, batch } from "react-redux";
 import { Link } from 'react-router-dom';
 
 const Projet = ({ index, img, title, description, number, descriptionPage, skills, longDescription, imgPresentation, button, developers, designer }) => {
-
-  const router = useRouter();
-  const data = useSelector((state)=> state.passData.value);
 
   const dispatch = useDispatch();
 
@@ -30,10 +26,6 @@ const Projet = ({ index, img, title, description, number, descriptionPage, skill
       designer : designer,
     }));
     document.querySelector('#descriptionContainer').style.display = 'flex';
-
-
-    console.log(data);
-    console.log(index, img, title, description, number, descriptionPage);
 
   };
 

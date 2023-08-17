@@ -5,7 +5,6 @@ import * as THREE from "three";
 import "../../../../public/css/Home.css";
 import Navbar from "../Navbar/Navbar";
 import Description from "../DescriptionPage/description";
-import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
