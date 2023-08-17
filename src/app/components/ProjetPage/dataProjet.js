@@ -22,7 +22,7 @@ const dataProjet = [
       button : [
         { title : 'GITHUB', link : 'https://github.com/ezeflt/Time_clock' }
       ],
-      Vitrine : { img : false, src : '/video/clock.mp4', class : 'iphoneVideo'}
+      Vitrine : { img : false, src : 'https://res.cloudinary.com/db9qvgg30/video/upload/v1692283911/clock_dxyl0z.mov', class : 'iphoneVideo'}
     },
     {
       title: 'Abattoir végétal', 
@@ -56,7 +56,7 @@ const dataProjet = [
         { title : 'SITE WEB', link : 'https://abattoir-vegetal.sekhmet.lapasserelle.school/' },
         { title : 'GITHUB', link : 'https://github.com/ezeflt/Abattoir_vegetal' }
       ],
-      Vitrine : { img : false, src : '/video/abattoirVegetal.mp4', class : 'laptopVideo'}
+      Vitrine : { img : false, src : 'https://res.cloudinary.com/db9qvgg30/video/upload/v1692283917/abattoirVegetal_vpes41.mov', class : 'laptopVideo'}
     },
     {
       title: 'Morning news', 
@@ -83,7 +83,7 @@ const dataProjet = [
         { title : 'SITE WEB', link : 'https://morning-frontend-ugd2.vercel.app/' },
         { title : 'GITHUB', link : 'https://github.com/ezeflt/morning_news' }
       ],
-      Vitrine : { img : false, src :  '/video/morning.mp4', class : 'laptopVideo'}
+      Vitrine : { img : false, src :  'https://res.cloudinary.com/db9qvgg30/video/upload/v1692283917/morning_jmwhbn.mov', class : 'laptopVideo'}
     },
     {
       title: 'Locapic', 
@@ -110,7 +110,7 @@ const dataProjet = [
       button : [
         { title : 'GITHUB', link : 'https://github.com/ezeflt/locapic' }
       ],
-      Vitrine : { img : false, src : '/video/locapic.mp4', class : 'iphoneVideo'}
+      Vitrine : { img : false, src : 'https://res.cloudinary.com/db9qvgg30/video/upload/v1692283910/locapic_jcpawb.mov', class : 'iphoneVideo'}
     },
 ]
 
