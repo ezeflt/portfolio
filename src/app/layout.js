@@ -3,11 +3,27 @@ import { useEffect } from 'react'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { ReduxProvider } from '@/redux/provider';
-
+import { Provider } from 'react-redux';
+import passData from "../redux/features/passData";
+import storage from "redux-persist/lib/storage";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { persistStore, persistReducer } from "redux-persist";
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
+
+
+  const reducerLocal = combineReducers({ passData });
+
+  const persistConfig = { key: "Description", storage };
+  
+  const store = configureStore({
+    reducer: persistReducer(persistConfig, reducerLocal),
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({ serializableCheck: true }),
+  });
+  
 
   useEffect(()=>{
     const threeScript = document.createElement('script');
@@ -32,11 +48,11 @@ export default function RootLayout({ children }) {
         <meta name='language' content='fr'></meta>
         <link rel="vercel" sizes="180x180" href="vercel.svg" />
       </head>
-      <ReduxProvider store={children}>
+      <Provider store={store}>
         <body className={inter.className}>
             {children}
         </body>
-      </ReduxProvider>
+      </Provider>
     </html>
   )
 }
