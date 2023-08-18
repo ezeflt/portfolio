@@ -1,15 +1,18 @@
 {
-
-    "version": 2,
-    "builds": [{
-        "src": "./src/app/layout.js",
+    "builds": [
+      {
+        "src": "package.json",
         "use": "@vercel/node"
-    }],
-    "routes": [{
-        "src": "/(.*)",
-        "dest": "app.js"
-    }],
-    "ignore": [
-      "./.next/server/pages/description"
-    ]
-}
+      }
+    ],
+    "routes": [
+      {
+        "src": "/.*",
+        "dest": "/index.html"
+      }
+    ],
+    "version": 2,
+    "build": {
+      "skip": true
+    }
+  }
