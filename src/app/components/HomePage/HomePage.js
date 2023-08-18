@@ -64,7 +64,7 @@ const HomePage = () => {
           </div>
           <div id="boxBtn">
             <button onClick={()=>{document.querySelector('#aboutMe').style.display = 'flex'}}>ME DÉCOUVRIR</button>
-            <a target="_blank" href="/img/imgCV/Felten ezechiel CV (alternance).pdf" download><button>LIRE MON CV</button></a>
+            <a target="_blank" href="/img/imgCV/Felten ezechiel CV (alternance).pdf" download>LIRE MON CV</a>
           </div>
         </div>
       </article>

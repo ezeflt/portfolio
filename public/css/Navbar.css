@@ -6,6 +6,7 @@
     align-items: center;
     position: fixed;
     z-index: 200;
+    top: 0;
 }
 .header nav{
     display: flex;

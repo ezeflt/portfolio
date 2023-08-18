@@ -81,7 +81,7 @@ h1{
     padding: 6px 19px;
     border-radius: 1.5px;
 }
-#boxBtn button{
+#boxBtn button, #boxBtn a{
     margin-right: 50px;
     font-size: 1.3rem;
     padding: 6px 8px;
@@ -141,10 +141,14 @@ h1{
     }
 }
 @media screen and (max-width : 600px) {
-    #boxBtn button{
+    #boxBtn button, #boxBtn a{
         margin-right: 50px;
         font-size: 1rem;
         padding: 6px 8px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .main article div{
         width: 526px;
@@ -153,6 +157,12 @@ h1{
         justify-content: space-between;
         align-items: center;
         flex-direction: column;
+    }
+    main{
+        justify-content: center;
+    }
+    .main article{
+        height: auto;
     }
 }
 @media screen and (max-width : 500px) {
@@ -205,7 +215,7 @@ h1{
     }
 }
 @media screen and (max-width : 360px) {
-    #boxBtn button{
+    #boxBtn button, #boxBtn a{
         margin-right: 50px;
         margin-top: 10px;
         font-size: 0.9rem;
