@@ -7,12 +7,19 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 const Navbar = () => {
 
-
+    /**
+     * Description :
+     * when the component is mounted, creates an animation on each navbar item
+     */
     useEffect(()=>{
+
+        // GET ScrollTrigger for scroll animations
         gsap.registerPlugin(ScrollTrigger);
 
+        // GET each navbar item
         const listItems = document.querySelectorAll('.nav-list');
 
+        // create an animation for each navbar item
         gsap.fromTo(listItems, 
             {y:'-10px', opacity:0}, 
             {y:'0px', opacity:1, stagger:0.2}

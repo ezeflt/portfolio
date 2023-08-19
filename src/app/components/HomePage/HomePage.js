@@ -4,19 +4,22 @@ import WAVES from "vanta/dist/vanta.waves.min";
 import * as THREE from "three";
 import "../../../../public/css/Home.css";
 import Navbar from "../Navbar/Navbar";
-import Description from "../DescriptionPage/description";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const HomePage = () => {
 
-  //setter qui met à jour l'état de la librarie
+  // the state to hold the background animation of home page
   const [vantaEffect, setVantaEffect] = useState(0);
-  //réference lier à la div <main></main>
+
+  // initialise the animation reference
   const vantaRef = useRef(null);
 
-  // au chargement du composant
-  //si l'état vantaEffect est false ou undifined -> met le à jour et remplie le canvas
+  /**
+   * Description :
+   * when the component is mounted, check if the background animation existes
+   * if it is emty then create the value of  background animation
+   */
   useEffect(() => {
     if (!vantaEffect) {
       setVantaEffect(
@@ -38,7 +41,6 @@ const HomePage = () => {
         })
       );
     }
-    //détruit le librairie
     return () => {
       if (vantaEffect) vantaEffect.destory();
     };
@@ -46,15 +48,15 @@ const HomePage = () => {
 
   return (
     <main id="home" className="main" ref={vantaRef}>
-      {/* composant navbar */}
+      {/* navbar component */}
       <Navbar />
-      {/* réseaux sociaux */}
+      {/* social networks */}
       <div id="boxReseaux">
       <a target='_blank' href="https://www.linkedin.com/in/ezechiel-felten-475693248/"><img src="/img/accueilImg/linkedin.png" /></a>
         <a target='_blank' href="https://github.com/ezeflt"><img src="/img/accueilImg/github.png" /></a>
         <a target='_blank' href="https://www.instagram.com/eze_flt/"><img src="/img/accueilImg/instagram.png" /></a>
       </div>
-      {/* présentation */}
+      {/* my informations */}
       <article>
         <div>
           <h1>Ezechiel Felten</h1>

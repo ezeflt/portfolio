@@ -1,55 +1,51 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../../../../../public/css/Projet.css";
 import { newData } from "@/redux/features/passData";
-import { useDispatch, useSelector, batch } from "react-redux";
-import { Link } from 'react-router-dom';
+import { useDispatch } from "react-redux";
 
-const Projet = ({ index, img, title, description, number, descriptionPage, skills, longDescription, imgPresentation, button, developers, designer }) => {
+const Projet = (props) => {
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch();  // initialise the dispatch function
 
-  const handleClick = () => {
+  /**
+   * Description :
+   * when clicked to card
+   * pass project datas to the local storage
+   * display the description page
+   */
+  function clickToCard(){
 
+    // pass data
     dispatch(newData({
-      index : index,
-      img : img,
-      title : title,
-      description : description,
-      number : number,
-      descriptionPage : descriptionPage,
-      longDescription : longDescription,
-      skills : skills,
-      imgPresentation : imgPresentation,
-      button : button,
-      developers : developers,
-      designer : designer,
+      index : props.index,
+      img : props.img,
+      title : props.title,
+      description : props.description,
+      number : props.number,
+      descriptionPage : props.descriptionPage,
+      longDescription : props.longDescription,
+      skills : props.skills,
+      imgPresentation : props.imgPresentation,
+      button : props.button,
+      developers : props.developers,
+      designer : props.designer,
     }));
+    // display the description page
     document.querySelector('#descriptionContainer').style.display = 'flex';
-
   };
 
-
   return (
-    <div
-      onClick={() => handleClick()}
-      id={
-        descriptionPage
-          ? "descriptionPage"
-          : index % 2 == 0
-          ? "boxProjet2"
-          : "boxProjet"
-      }
-    >
+    <div onClick={() => clickToCard()} id={ props.descriptionPage ? "descriptionPage" : props.index % 2 == 0 ? "boxProjet2" : "boxProjet" }>
       <div id="boxNumber">
-        <img src={number} />
+        <img src={props.number} />
       </div>
       <figure>
-        <img src={img} />
+        <img src={props.img} />
       </figure>
       <div>
-        <h2>{title}</h2>
-        <p>{description}</p>
+        <h2>{props.title}</h2>
+        <p>{props.description}</p>
       </div>
     </div>
   );

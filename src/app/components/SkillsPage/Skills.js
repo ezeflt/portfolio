@@ -1,33 +1,34 @@
 "use client"; // obligation de le mettre depuis next v13 👈🏽
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../../../public/css/Skills.css';
-import Langage from './langage/Langage';
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import Typed from "react-typed";
-
-//import data front & back pour le map du composant Langage
-// import fonction qui change la couleur de la navbar au scroll
-import {dataLangageBackend, dataLangageFrontend} from './dataSkills';
-import { animationNavbar ,animationSkills} from './animation';
-
+import {dataLangageBackend, dataLangageFrontend} from './dataSkills'; // GET skills data
+import { animationNavbar} from './animation';   // GET the function of navbar animations
+import Langage from './langage/Langage';        // GET the child langage component
 
 
 const Skills = () => {
 
+    // the state to hold value of the display title
     const [scrollToTitle, setScrollToTitle] = useState(false);
     
+    /**
+     * Description :
+     * when the componoent is mounted, activate the scrolling animations
+     */
     useEffect(()=>{
-        // applique la fonction qui change la couleur de la navbar au
+
+        // use the animation Navbar function that change the navbar color
         animationNavbar();
 
-        
-
+        // use skills animations if the user uses a (desktop, laptop)
         if(innerWidth>1000){
             
-            gsap.set('#article1', {y:'-100%', opacity:0});
-            gsap.set('#article2', {y:'-100%', opacity:0});
+            gsap.set('#article1', {y:'-100%', opacity:0});  // don't display the frontend skills
+            gsap.set('#article2', {y:'-100%', opacity:0});  // don't display the backend  skills
 
+            // when the user scrolls on skills page, activate the skills animations
             gsap.to('#article1', { scrollTrigger:{
                 trigger: '#containerSkills',
                 markers: false,
@@ -38,11 +39,11 @@ const Skills = () => {
           }
     },[])
 
-    //map sur le composant enfant en lui passant la data front
+    // the FrontEndLangage variable value is a loop througth the frontend skills
     const FrontEndLangage = dataLangageFrontend.map((data)=>{
         return <Langage descriptionPage={false} titleLangage={data.titleLangage} img={data.img} />
     })
-    //map sur le composant enfant en lui passant la data front
+    // the BackEndLangage variable value is a loop througth the backend skills
     const BackEndLangage = dataLangageBackend.map((data)=>{
         return <Langage descriptionPage={false} titleLangage={data.titleLangage} img={data.img} />
     })

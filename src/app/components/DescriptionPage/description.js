@@ -1,75 +1,74 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../../../../public/css/Description.css";
 import Projet from "../ProjetPage/Projet/Projet";
 import Langage from "../SkillsPage/langage/Langage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { useRouter } from "next/navigation";
-import { dataProjet } from "../ProjetPage/dataProjet";
 import { useSelector } from "react-redux";
 
 const Description = () => {
 
-  const [index, setIndex] = useState(0);
+  let skills;       // initialise the skills variable
+  let developers;   // initialise the developers variable
+  let designer;     // initialise the designer variable
+  let button;       // initialise the button variable
+  let image;        // initialise the image variable
 
-  const data = useSelector((state)=> state.passData.value);
+  // initialise project data from the local storage
+  const descriptionData = useSelector((state)=> state.passData.value);
 
-  const handleClick = () => {
+  /**
+   * Description :
+   * when clicked to xMark, don't display the description Container
+   */
+  function handleClick(){
     document.querySelector('#descriptionContainer').style.display = 'none';
   };
 
-  const dataTest = {
-    title: "Projet",
-    img: "/img/accueilImg/github.png",
-    number: "/img/number/logo1.svg",
-    description:
-      "Ce projet est une création de clone du site web twitter Ce projet est une création de clone du site web twitter",
-    skills: [
-      { titleLangage: "HTML", img: "/img/skillsImg/HTML5.png" },
-      { titleLangage: "CSS", img: "/img/skillsImg/CSS3.png" },
-      { titleLangage: "JS", img: "/img/skillsImg/JS.png" },
-      { titleLangage: "REACT", img: "/img/skillsImg/REACT.png" },
-      { titleLangage: "BOOTSTRAP", img: "/img/skillsImg/bootstrap.png" },
-    ],
-  };
-  let skills;
-  let developers;
-  let designer;
-  let button;
-  let image;
 
-  if(data.skills){
-    skills = data.skills.map((data, i) => {return  <Langage descriptionPage={true} img={data.img} titleLangage={data.titleLangage} key={i}/>});
-    developers = data.developers.map(developer => { return <span className="employe-span">@{developer}</span>});
-    designer = data.designer.map(designer => { return <span className="employe-span">@{designer}</span>});
-    button = data.button.map(button => { return <a target="_blank" href={button.link} className="btn-visit">{button.title}</a>});
-    image = data.imgPresentation.map(image => { return <img src={image} />})
+  // check if descriptionData is not empty
+  if(descriptionData.skills){
+
+    // the skills variable value is a loop througth the skills
+    skills = descriptionData.skills.map((data, i) => {
+      return  <Langage descriptionPage={true} img={data.img} titleLangage={data.titleLangage} key={i}/>
+    });
+    
+    // the developers variable value is a loop througth the developer names
+    developers = descriptionData.developers.map(developer => {
+       return <span className="employe-span">@{developer}</span>
+      });
+
+    // the designer variable value is a loop througth the designer names
+    designer = descriptionData.designer.map(designer => {
+       return <span className="employe-span">@{designer}</span>
+      });
+
+    // the button variable value is a loop througth the buttons
+    button = descriptionData.button.map(button => {
+       return <a target="_blank" href={button.link} className="btn-visit">{button.title}</a>
+      });
+
+    // the image variable value is a loop througth the images
+    image = descriptionData.imgPresentation.map(image => {
+       return <img src={image} />
+      })
   }
 
   return (
     <div id="descriptionContainer">
       <div id="container">
         <a>
-          <FontAwesomeIcon
-            onClick={() => handleClick()}
-            id="leavePage"
-            icon={faXmark}
-          />
+          <FontAwesomeIcon onClick={() => {handleClick()}} id="leavePage" icon={faXmark}/>
         </a>
         <article id="box">
           <div id="firstInfo">
             <section id="cardContainer">
-              <Projet
-                number={data.number}
-                img={data.img}
-                title={data.title}
-                description={data.description}
-                descriptionPage={true}
-              />
+              <Projet number={descriptionData.number} img={descriptionData.img} title={descriptionData.title} description={descriptionData.description} descriptionPage={true}/>
             </section>
             <section id="information">
-              <h1>{data.title}</h1>
+              <h1>{descriptionData.title}</h1>
               <article>
                 <div className="metier">
                   <span className="metier-span">Développeur :</span>
@@ -82,7 +81,7 @@ const Description = () => {
               </article>
               <article>
                 <p>
-                  {data.longDescription}
+                  {descriptionData.longDescription}
                 </p>
               </article>
               <article>

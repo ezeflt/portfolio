@@ -14,6 +14,7 @@ const ContactPage = () => {
                     <div style={{background:'#299F00'}}></div>
                 </header>
                 <div>
+                    {/* text data */}
                     <Typed strings={[`
                     \/ /____/ v. 2.36.0<br></br>
                     Copyright (c) 2023 Ezechiel.Felten</><br></br>
