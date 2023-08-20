@@ -113,12 +113,14 @@ h1{
 #aboutMe h2{
     text-transform: uppercase;
     margin-top: 10%;
+    color: #fff;
 }
 #aboutMe p {
     width: 60%;
     height: auto;
     margin-top: 50px;
     margin-bottom: 50px;
+    color: #fff;
 }
 #xMark{
     position: absolute;
@@ -128,6 +130,7 @@ h1{
     height: 40px;
     width: 40px;
     cursor: pointer;
+    color: #fff;
 }
 @media screen and (max-width : 1000px) {
     .menu{
