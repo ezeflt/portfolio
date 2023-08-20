@@ -25,10 +25,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <head>
+        <link type="image/png" rel="icon" sizes="180x180" href="img/EF.png" />
         <title>Ezechiel Felten</title>
         <meta name='description' content='Ezechiel Felten, développeur web portfolio. programmeur depuis 2022 découvrez à travers ce portfolio mes compétences ainsi que chacun de mes projets. ' ></meta>
         <meta name='language' content='fr'></meta>
-        <link rel="vercel" sizes="180x180" href="img/EF.png" />
       </head>
       <Provider store={store}>
         <body className={inter.className}>
